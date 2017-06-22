@@ -24,4 +24,4 @@ kconfigs/Kconfig.index: $(KCONFIGS)
 	bin/gen-index $(?:kconfigs/%=%) > $@
 
 %.patch: %.patch.tmpl
-	cat $< | envsubst '$${DESTDIR}' > $@
+	envsubst '$${DESTDIR}' < $< > $@
