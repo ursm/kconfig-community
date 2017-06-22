@@ -1,0 +1,71 @@
+config KCONFIG_COMMUNITY_DOCKER
+	bool "Select options required by Docker"
+
+	default n
+
+	select BLK_CGROUP
+	select BLK_DEV_THROTTLING
+	select BRIDGE
+	select BRIDGE_NETFILTER
+	select CFQ_GROUP_IOSCHED
+	select CFS_BANDWIDTH
+	select CGROUPS
+	select CGROUP_CPUACCT
+	select CGROUP_DEVICE
+	select CGROUP_FREEZER
+	select CGROUP_HUGETLB
+	select CGROUP_PERF
+	select CGROUP_PIDS
+	select CGROUP_SCHED
+	select CPUSETS
+	select DUMMY
+	select FAIR_GROUP_SCHED
+	select IOSCHED_CFQ
+	select IPC_NS
+	select IPVLAN
+	select IP_NF_FILTER
+	select IP_NF_TARGET_MASQUERADE
+	select IP_VS
+	select IP_VS_NFCT
+	select IP_VS_PROTO_TCP
+	select IP_VS_PROTO_UDP
+	select KEYS
+	select MACVLAN
+	select MEMCG
+	select MEMCG_SWAP
+	select MEMCG_SWAP_ENABLED
+	select NAMESPACES
+	select NETFILTER_XT_MATCH_ADDRTYPE
+	select NETFILTER_XT_MATCH_CONNTRACK
+	select NET_CLS_CGROUP
+	select NET_NS
+	select NF_NAT
+	select NF_NAT_IPV4
+	select NF_NAT_NEEDED
+	select PID_NS
+	select POSIX_MQUEUE
+	select RT_GROUP_SCHED
+	select SECCOMP
+	select USER_NS
+	select UTS_NS
+	select VETH
+	select VXLAN
+	select XFRM_ALGO
+	select XFRM_USER
+
+	# indirect dependencies
+	select BLOCK
+	select HUGETLB_PAGE
+	select INET
+	select IPV6
+	select IP_NF_IPTABLES
+	select IP_NF_NAT
+	select MULTIUSER
+	select NET
+	select NETDEVICES
+	select NETFILTER
+	select NET_CORE
+	select NET_L3_MASTER_DEV
+	select NET_SCHED
+	select NF_CONNTRACK
+	select NF_CONNTRACK_IPV4

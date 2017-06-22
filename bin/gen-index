@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo 'menu "Useful settings provided by the community"'
+echo
+
+for i in $@; do
+	echo "	source \"${DESTDIR}/usr/src/kconfig-community/${i}\""
+done
+
+echo
+echo 'endmenu'
