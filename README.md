@@ -2,6 +2,10 @@
 
 A collection of useful kernel configurations provided by the community.
 
+## Prerequisites
+
+- `sys-devel/gettext` (for `envsubst` command)
+
 ## Installation
 
 ```
