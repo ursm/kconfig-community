@@ -1,13 +1,7 @@
-.PHONY: all clean install
+.PHONY: all clean install uninstall
 
 KCONFIGS = $(filter-out kconfigs/Kconfig.index, $(wildcard kconfigs/Kconfig.*))
 PATCHES  = $(patsubst %.tmpl, %, $(wildcard patches/*/*/*.patch.tmpl))
-
-kconfigs/Kconfig.index: $(KCONFIGS)
-	bin/gen-index $(?:kconfigs/%=%) > $@
-
-%.patch: %.patch.tmpl
-	cat $< | envsubst '$${DESTDIR}' > $@
 
 all: kconfigs/Kconfig.index $(PATCHES)
 
@@ -25,3 +19,9 @@ install: all
 uninstall:
 	rm -rf $(DESTDIR)/usr/src/kconfig-community
 	rm -rf $(DESTDIR)/etc/portage/patches/*/*/kconfig-community.patch
+
+kconfigs/Kconfig.index: $(KCONFIGS)
+	bin/gen-index $(?:kconfigs/%=%) > $@
+
+%.patch: %.patch.tmpl
+	cat $< | envsubst '$${DESTDIR}' > $@
