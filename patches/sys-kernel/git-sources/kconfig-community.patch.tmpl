@@ -1,0 +1,11 @@
+diff --git a/Kconfig b/Kconfig
+index c13f48d..a662849 100644
+--- a/Kconfig
++++ b/Kconfig
+@@ -8,4 +8,6 @@ config SRCARCH
+ 	string
+ 	option env="SRCARCH"
+ 
++source "${DESTDIR}/usr/src/kconfig-community/Kconfig.index"
++
+ source "arch/$SRCARCH/Kconfig"
